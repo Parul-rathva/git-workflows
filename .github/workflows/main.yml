@@ -1,11 +1,28 @@
 name: CI
-on: push
+on:
+  push:
+    branches:
+      - main  # Adjust the branch as needed
 
 jobs:
-  test:
-    runs-on: self-hosted
+  build:
+    runs-on: self-hosted  # Indicates to use a self-hosted runner
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-    - run: npm install
-    - run: npm test
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      - name: Install dependencies
+        run: npm install
+      
+      # Add more steps as needed, such as running tests or building your application
+# name: CI
+# on: push
+
+# jobs:
+#   test:
+#     runs-on: self-hosted
+#     steps:
+#     - uses: actions/checkout@v2
+#     - uses: actions/setup-node@v1
+#     - run: npm install
+#     - run: npm test
