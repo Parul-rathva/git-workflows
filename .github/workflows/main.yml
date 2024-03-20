@@ -13,6 +13,9 @@ jobs:
       
       - name: Install dependencies
         run: npm install
+
+      - name: Testing npm
+        run: npm test
       
       # Add more steps as needed, such as running tests or building your application
 # name: CI
